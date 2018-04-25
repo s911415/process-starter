@@ -10,6 +10,8 @@ namespace Starter
     {
         static void Main(string[] args)
         {
+            XMLParser parser = new XMLParser("ProcessList.xml");
+            new ProcessGroup(parser.Root).Execute();
         }
     }
 }

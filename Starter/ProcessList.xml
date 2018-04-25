@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ProcessGroup>
+  <Processes>
+    <!-- Processes start without wait -->
+    <Process> <!-- Process 1 -->
+      <Delay>0</Delay> <!-- Set Delay Start in ms-->
+      <PowerMode></PowerMode> <!-- Set start this process when current power match, omit if you want to ignore this -->
+      <Path>cmd.exe</Path> <!-- Path of program -->
+      <Arguments> <!-- Set arguments of program -->
+        <Pair key="/c mkdir C:\Temp"/>
+      </Arguments>
+      <WorkingDirectory>Y:\</WorkingDirectory> <!-- working directory -->
+      <EnvironmentVariables>
+      </EnvironmentVariables>
+      <Hide>True</Hide> <!-- True if you want to hide window -->
+    </Process>
+    
+    <Process> <!-- Process 2 -->
+      <Delay>100</Delay>
+      <PowerMode>Online</PowerMode>
+      <Path>program2.exe</Path>
+      <Arguments>
+      </Arguments>
+      <WorkingDirectory>C:\</WorkingDirectory>
+      <EnvironmentVariables>
+        <Pair key="TMP" value="C:\Temp"/>
+        <Pair key="TEMP" value="C:\Temp"/>
+      </EnvironmentVariables>
+      <Hide>False</Hide>
+    </Process>
+    
+    <!-- Add more Processes if need -->
+    
+  </Processes>
+</ProcessGroup>
