@@ -36,7 +36,7 @@ namespace Starter
             workingDirectory = GetContent("WorkingDirectory", null);
             args = new PairArray(GetElementChild("Arguments"));
             vars = new PairArray(GetElementChild("EnvironmentVariables"));
-            hide = Boolean.Parse(GetContent("hide", Boolean.FalseString));
+            hide = Boolean.Parse(GetContent("Hide", Boolean.FalseString));
         }
 
         private void SetPowerModes()

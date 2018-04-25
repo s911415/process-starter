@@ -50,7 +50,12 @@ namespace Starter
                     foreach (Tuple<string, string> pair in prop.EnvVars)
                         startInfo.EnvironmentVariables[pair.Item1] = pair.Item2;
 
-                    startInfo.CreateNoWindow = prop.Hide;
+                    if (prop.Hide)
+                    {
+                        startInfo.CreateNoWindow = true;
+                        startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                    }
+                    
                     p = System.Diagnostics.Process.Start(startInfo);
 
                     OnFinish?.Invoke();
